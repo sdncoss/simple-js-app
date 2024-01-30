@@ -1,3 +1,4 @@
+// list of pokemon for the app
 let pokemonList = [
     {name: 'Bulbasaur', height:  7, type: ['Grass','Poison']},
     {name: 'Charmander', height: 6, type: ['Fire', 'Steel']},
