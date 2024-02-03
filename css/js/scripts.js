@@ -1,10 +1,10 @@
 // list of pokemon for the app
 let pokemonList = [
-    {name: 'Bulbasaur', height:  0.7, type: ['Grass']},
-    {name: 'Charmander', height: 0.6, type: ['Fire']},
-    {name: 'Squirtle', height: 0.5, type: ['Water']},
-    {name: 'Pikachu', height: 0.4, type: ['Electric']},
-    {name: 'Clefairy', height: 0.6, type: ['Psychic']},
+    {name: 'Bulbasaur', height:  0.7, types: ['Grass','Poison']},
+    {name: 'Charmander', height: 0.6, types: ['Fire', 'Steel']},
+    {name: 'Squirtle', height: 0.5, types: ['Water', 'Steel']},
+    {name: 'Pikachu', height: 0.4, types: ['Electric', 'Psychic']},
+    {name: 'Clefairy', height: 0.6, types: ['Psychic', 'Fairy']}
 ];
 
 // loop to write pokemon name and height within scale of heights
