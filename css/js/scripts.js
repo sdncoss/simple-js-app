@@ -10,10 +10,11 @@ let pokemonList = [
 // loop to write pokemon name and height within scale of heights
 for (let i = 0; i < pokemonList.length; i++) {
     if (pokemonList[i].height > 0.5 && pokemonList[i].height < 1){
-        document.write(pokemonList[i].name + ' is average at ' + pokemonList[i].height + 'cm tall.<br> ');
+        document.write(pokemonList[i].name + ' is average height at ' + pokemonList[i].height + 'cm tall.<br>>');
     } else if (pokemonList[i].height <= 0.5){
-        document.write(pokemonList[i].name + ' is small at ' + pokemonList[i].height + 'cm tall.<br> ');
+        document.write(pokemonList[i].name + ' is small in height at ' + pokemonList[i].height + 'cm tall.<br>');
     } else {
-        document.write(pokemonList[i].name + ' is tall at ' + pokemonList[i].height + 'cm tall. That is BIG!<br>');
+        document.write(pokemonList[i].name + ' is tall in height at ' + pokemonList[i].height + 'cm tall. That is BIG!<br>');
     }
 }
+
