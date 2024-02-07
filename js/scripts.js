@@ -1,4 +1,4 @@
-// funtion list of pokemon for the app
+// IIFE funtion list of pokemon for the app
 let pokemonRepository = (function () {
     let pokemonList = [
         { name: 'Bulbasaur', height: 0.7, types: ['Grass', 'Poison'] },
@@ -13,33 +13,27 @@ let pokemonRepository = (function () {
     function getAll() {
         return pokemonList;
     }
+    //function using DOM to use the array as a list of buttons
+    function addListItem(pokemon) {
+        let pokemonNames = document.querySelector('.pokemon-list');
+        let listItem = document.createElement('li');
+        let button = document.createElement('button');
+        button.innerText = pokemon.name;
+        button.classList.add('pokemon-button');
+        listItem.appendChild(button);
+        pokemonNames.appendChild(listItem);
+    }
     return {
         add: add,
-        getAll: getAll
+        getAll: getAll,
+        addListItem: addListItem
     };
 })();
 //adding a new pokemon to list
 pokemonRepository.add({name: 'Rattata', height: 0.3, types: ['Grass', 'Ghost']});
 
 
-//new loop utilizing forEach to iterate through each pokemon name and height
+//new loop utilizing forEach with DOM to iterate through each pokemon name
 pokemonRepository.getAll().forEach(function (pokemon) {
-    document.write(pokemon.name + ' is ' + pokemon.height + 'cm tall.<br>');
+    pokemonRepository.addListItem(pokemon);
 });
-
-
-
-
-// old extended loop to write pokemon name and height within scale of heights
-/*for (let i = 0; i < pokemonList.length; i++) {
-    if (pokemonList[i].height > 0.5 && pokemonList[i].height < 1) {
-        document.write(pokemonList[i].name + ' is average height at ' + pokemonList[i].height + 'cm tall.<br>');
-    } else if (pokemonList[i].height <= 0.5) {
-        document.write(pokemonList[i].name + ' is small in height at ' + pokemonList[i].height + 'cm tall.<br>');
-    } else {
-        document.write(pokemonList[i].name + ' is tall in height at ' + pokemonList[i].height + 'cm tall. That is BIG!<br>');
-    }
-}*/
-
-
-
