@@ -15,3 +15,7 @@
     background-color: #C8D7D2;
     text-transform: uppercase;
 }
+
+.modal-body, .modal-img {
+    text-align: center;
+}
