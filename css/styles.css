@@ -1,0 +1,17 @@
+.list-group-item {
+    background-color: #C8D7D2;
+    margin-bottom: 10px;
+    border-radius: 2%;
+}
+.btn {
+    text-transform: uppercase;
+}
+
+.list-group-item:hover {
+    background-color: #fff;
+}
+
+.modal-header {
+    background-color: #C8D7D2;
+    text-transform: uppercase;
+}
