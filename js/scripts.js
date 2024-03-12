@@ -12,9 +12,9 @@ let pokemonRepository = (function () {
         modalBody.empty();
 
         let nameElement = $('<h3>' + pokemon.name + '</h3>');
-        let imgElement = $('<img class="modal-img" style="width: 50%">').attr("src", item.imageUrl);
+        let imgElement = $('<img class="modal-img" style="width: 50%">').attr("src", pokemon.imageUrl);
         let heightElement = $('<p>' + 'Height: ' + pokemon.height + '</p>');
-        let typesElement = $('<p>' + 'Types: ' + pokemon.types.join(', ') + '</p>');
+        let typesElement = $("<p>" + "Types: " + (pokemon.types || []).map((t) => t.type.name).join(", ") + "</p>");
 
 
         // Appending elements to the modal
@@ -48,7 +48,7 @@ let pokemonRepository = (function () {
         let listItem = document.createElement('li');
         // creates class for bootstrap
         listItem.classList.add('list-group-item');
-        
+
         // puts li in ul 
         pokemonNames.appendChild(listItem);
         // create buttons for each list item
@@ -56,12 +56,14 @@ let pokemonRepository = (function () {
         // uses the array to put pokemon names on each button
         button.innerText = pokemon.name;
         button.classList.add('btn', 'btn-lg', 'btn-block', 'list-btn');
+        button.setAttribute('data-toggle', 'modal');
+        button.setAttribute('data-target', '#exampleModal');
         listItem.appendChild(button);
 
         // opens modal of the pokemon information when button is clicked
         button.addEventListener('click', function (event) {
             showDetails(pokemon);
-        })
+        });
     }
 
     // loading API function to get names and details
